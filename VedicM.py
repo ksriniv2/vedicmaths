@@ -97,7 +97,67 @@ class VedicM:
                return('-'+ ''.join(str_nums))
             else:
                 return(''.join(str_nums))
+    def mul11(inpMultiply,learn=False):
+        if learn:
+                VedicM("Multiply11")
+                
+            #print(inpComplement)
+        carryover=0
+        rarr=[]
+        lstMultiply=[]
+        
+        if str(inpMultiply).isnumeric():
+            
+            lstMultiply=list(reversed(inpMultiply))
+            lstMultiply.append('0')
+            lstMultiply=['0']+lstMultiply
+            #print(lstMultiply)
+            for idx,iDigit in enumerate(lstMultiply):
+                if idx < len(lstMultiply)-1:
+                    cacheadd=int(iDigit) + int(lstMultiply[idx +1])
+                    #print(cacheadd)
+                    if (cacheadd+carryover ) > 10:
+                        rarr.append(cacheadd-10+carryover)
+                        carryover=1
+                    elif (cacheadd+carryover ) == 10:
+                        rarr.append(cacheadd-10+carryover)
+                        carryover=1
+                    else:
+                        rarr.append(cacheadd+carryover)
+                        carryover=0
+            str_nums = [str(x) for x in reversed(rarr)]
+            return(''.join(str_nums))
                     
+    def mul12(inpMultiply,learn=False):
+        if learn:
+                VedicM("Multiply12")
+                
+            #print(inpComplement)
+        carryover=0
+        rarr=[]
+        lstMultiply=[]
+        
+        if str(inpMultiply).isnumeric():
+            
+            lstMultiply=list(reversed(inpMultiply))
+            lstMultiply.append('0')
+            lstMultiply=['0']+lstMultiply
+            #print(lstMultiply)
+            for idx,iDigit in enumerate(lstMultiply):
+                if idx < len(lstMultiply)-1:
+                    cacheadd=int(iDigit) + (2 * (int(lstMultiply[idx +1])))
+                    #print(cacheadd)
+                    if (cacheadd+carryover ) > 10:
+                        rarr.append(cacheadd-10+carryover)
+                        carryover=1
+                    elif (cacheadd+carryover ) == 10:
+                        rarr.append(cacheadd-10+carryover)
+                        carryover=1
+                    else:
+                        rarr.append(cacheadd+carryover)
+                        carryover=0
+            str_nums = [str(x) for x in reversed(rarr)]
+            return(''.join(str_nums))
     
     def __init__(self,method=False):
         print("Entering the world of Vedic Maths")
@@ -113,5 +173,17 @@ class VedicM:
             print("2. Go to complements when the lower digit is bigger than upper digit")
             print("3.First time complement has to be from 10 and later on with 9")
             print("4. When the numerator digit is bigger again, come out of complement and subtract extra 1 and later start the new complement from 10 for subsequent digits")
+            
+            
+        elif method=='Multiply11':
+            print("Sutra is : Antyayoreva")
+            print("Meaning : Only the last two digits")
+            print("Add only the last two digits at a time from base10. We dont need to any multiplication")
+            
+        elif method=='Multiply12':
+            print("Sutra is : Sopaantyadvayamantyam")
+            print("Meaning : The ultimate and twice the penultimate")
+            print("Add only the last digit with twice the penultimate at a time from base10. We dont need to any multiplication")
+            
             
         

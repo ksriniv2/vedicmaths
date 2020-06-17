@@ -46,3 +46,20 @@ There is no carry over in this method
 3.First time complement has to be from 10 and later on with 9
 4. When the numerator digit is bigger again, come out of complement and subtract extra 1 and later start the new complement from 10 for subsequent digits
 1108624
+
+
+
+Multiply 11:
+print(VedicM.mul11('795213',True) )  
+Sutra is : Antyayoreva
+Meaning : Only the last two digits
+Add only the last two digits at a time from base10. We dont need to any multiplication
+8747343
+
+Multiply 12:
+print(VedicM.mul12('26154',True) )    
+Entering the world of Vedic Maths
+Sutra is : Sopaantyadvayamantyam
+Meaning : The ultimate and twice the penultimate
+Add only the last digit with twice the penultimate at a time from base10. We dont need to any multiplication
+313848
