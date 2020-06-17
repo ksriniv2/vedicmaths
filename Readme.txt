@@ -30,3 +30,19 @@ print(VedicM.compliment('5670',False))
 
 Output:
 4330
+
+Subtraction:
+
+print(VedicM.subtract('4826495','3717871',True))
+
+Output:
+
+Entering the world of Vedic Maths
+Sutra is : Nikhilam Navatascarmam Dasatah
+Meaning : All from nine and last from ten
+There is no carry over in this method
+1. Do normal subtraction when the numerator digit is bigger than lower digit
+2. Go to complements when the lower digit is bigger than upper digit
+3.First time complement has to be from 10 and later on with 9
+4. When the numerator digit is bigger again, come out of complement and subtract extra 1 and later start the new complement from 10 for subsequent digits
+1108624
