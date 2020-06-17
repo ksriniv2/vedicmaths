@@ -79,6 +79,10 @@ class VedicM:
                 cachesub=int(indigit) - int(lstDenominator[idx])
                 if (cachesub > 0) and complement==0:
                     rarr.append(cachesub)
+                elif (cachesub==0 and complement==0):
+                    rarr.append(0)
+                elif (cachesub==0 and complement ==1 ):
+                    rarr.append(9)
                 elif (cachesub > 0) and complement==1:
                     rarr.append(cachesub-1)
                     complement=0
