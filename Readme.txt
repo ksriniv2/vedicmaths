@@ -53,7 +53,7 @@ Multiply 11:
 print(VedicM.mul11('795213',True) )  
 Sutra is : Antyayoreva
 Meaning : Only the last two digits
-Add only the last two digits at a time from base10. We dont need to any multiplication
+Add only the last two digits at a time from base10. We dont need to do any multiplication
 8747343
 
 Multiply 12:
@@ -61,5 +61,5 @@ print(VedicM.mul12('26154',True) )
 Entering the world of Vedic Maths
 Sutra is : Sopaantyadvayamantyam
 Meaning : The ultimate and twice the penultimate
-Add only the last digit with twice the penultimate at a time from base10. We dont need to any multiplication
+Add only the last digit with twice the penultimate at a time from base10. We dont need to do any multiplication
 313848
