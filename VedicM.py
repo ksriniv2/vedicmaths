@@ -8,7 +8,7 @@ Created on Tue Jun 16 21:53:32 2020
 class VedicM:
     
     
-   
+
     def complement(inpComplement,learn=False):
         if learn:
             VedicM("compliment")
@@ -158,6 +158,9 @@ class VedicM:
                         carryover=0
             str_nums = [str(x) for x in reversed(rarr)]
             return(''.join(str_nums))
+        
+    def test():
+        print(482649534595734983493434989834321342532668578697454351481293048120348 * 11)
     
     def __init__(self,method=False):
         print("Entering the world of Vedic Maths")
