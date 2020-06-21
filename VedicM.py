@@ -159,6 +159,44 @@ class VedicM:
             str_nums = [str(x) for x in reversed(rarr)]
             return(''.join(str_nums))
         
+        
+    def mul9 (inpMultiplicand,inpMultiplier,learn=False):
+        
+        eqdigit=''
+        if learn:
+            VedicM("Multiply9")
+            
+        if str(inpMultiplier).isnumeric() and str(inpMultiplicand).isnumeric():
+            if len(str(inpMultiplier))==len(str(inpMultiplicand)):
+                step1=VedicM.subtract(inpMultiplicand,'1')
+                step2=VedicM.complement(inpMultiplicand)
+                return(step1+step2)
+            elif len(str(inpMultiplier)) > len(str(inpMultiplicand)):
+                step0=len(str(inpMultiplier)) - len(str(inpMultiplicand))
+                for iter in range(step0):
+                    eqdigit=eqdigit+'0'
+                inpMultiplicand=eqdigit+inpMultiplicand
+                step1=VedicM.subtract(inpMultiplicand,'1')
+                step2=VedicM.complement(inpMultiplicand)
+                return(step1+step2)
+            elif len(str(inpMultiplier)) < len(str(inpMultiplicand)):
+                
+                inpMultiplicandleft= ''.join(list(inpMultiplicand)[:(len(str(inpMultiplicand)) - len(str(inpMultiplier)))])
+                
+                inpMultiplicandright=''.join(list(inpMultiplicand)[-1*len(inpMultiplier):])
+                
+                inpMultiplicandleft=str(int(inpMultiplicandleft) +1)
+                step1=VedicM.subtract(inpMultiplicand,inpMultiplicandleft)
+                step2=VedicM.complement(inpMultiplicandright)
+                return(step1+step2)
+                                                              
+        
+        
+        
+        
+        
+
+        
     def test():
         print(482649534595734983493434989834321342532668578697454351481293048120348 * 11)
     
@@ -187,6 +225,16 @@ class VedicM:
             print("Sutra is : Sopaantyadvayamantyam")
             print("Meaning : The ultimate and twice the penultimate")
             print("Add only the last digit with twice the penultimate at a time from base10. We dont need to any multiplication")
+            
+            
+        elif method=='Multiply9':
+            print("Sutra is : Nikhilam Navatascarmam Dasatah")
+            print("Meaning : All from nine and last from ten")
+            print('Subtract 1 from the multiplicand')
+            print('Obtain complement of the multiplicand')
+            print('concatenate the values together')
+            
+        
             
             
         

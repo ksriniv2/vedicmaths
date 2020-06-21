@@ -11,7 +11,7 @@ import time
 from VedicM import VedicM
 
 
-print(VedicM.complement('5670',False))
+print(VedicM.complement('0005',False))
 
 print(VedicM.subtract('482649534595734','482649534595733',False))
 
@@ -29,8 +29,18 @@ print(time.process_time() - start)
 
 
 print(VedicM.mul12('26154',True) )        
-     
-                
+
+print(time.process_time())
+print(VedicM.mul9('482649534595734983493434989834321342532668578697454351481293048120348','999999999999999999999999999999999999999999999999999999999999999999999','True'))     
+
+print(time.process_time())
+
+
+
+print(482649534595734983493434989834321342532668578697454351481293048120348*999999999999999999999999999999999999999999999999999999999999999999999)     
+ 
+
+print(VedicM.mul9('46972','99'))         
                 
 #in the command line of ipython
 
