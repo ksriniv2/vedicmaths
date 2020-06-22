@@ -15,9 +15,9 @@ Hope it helps the developers and wider community is welcome to improve on it.
 Karthik Srinivasan
 
 
-Compliment:
+Complement:
 
-print(VedicM.compliment('5670',True))
+print(VedicM.Complement('5670',True))
 
 Output:
 Entering the world of Vedic Maths
@@ -26,7 +26,7 @@ Meaning : All from nine and last from ten
 4330
 
 If no details on the methods needed:
-print(VedicM.compliment('5670',False))
+print(VedicM.Complement('5670',False))
 
 Output:
 4330
