@@ -12,7 +12,7 @@ Every method has information about suthras and what it means and how its devised
 
 Hope it helps the developers and wider community is welcome to improve on it.
 
-Karthik Srinivasan
+Karthik V Srinivasan
 
 
 Complement:
