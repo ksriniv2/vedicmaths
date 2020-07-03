@@ -81,3 +81,18 @@ Output:
 	Obtain complement of the multiplicand
 	concatenate the values together
 	482649534595734983493434989834321342532668578697454351481293048120347517350465404265016506565010165678657467331421302545648518706951879652
+	
+
+Mutliply 2 digits on multiplicand and multiplier:
+
+print(vm.mul2d('57','83',True))  
+
+Output:
+*********************************
+	Sutra is : Urdhvatiryabhyaam
+	Meaning : Vertical and cross wire
+	Vertically multiply digits of first column on right
+	Cross multiply the digits across
+	Vertically multiply digits of first column on right
+	In each step, carry over the other digits
+	4731
