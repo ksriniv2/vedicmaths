@@ -52,9 +52,9 @@ print(46972*99)
 
 
 
-print(vm.mul2d('99','98',True))  
+print(vm.mul2d('98','97',True))  
 
-print(99*98)
+print(98*97)
                 
 #in the command line of ipython
 
