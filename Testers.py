@@ -10,37 +10,50 @@ import time
 
 from VedicM import VedicM
 
-
-print(VedicM.complement('0005',False))
-
-print(VedicM.subtract('482649534595734','482649534595733',False))
+vm=VedicM()
 
 
-print(482649534595734 - 482649534595733)
 
 
-start = time.process_time()
-print(VedicM.mul11('482649534595734983493434989834321342532668578697454351481293048120348',True) )  
-print(time.process_time() - start)
 
-start = time.process_time()
-print(VedicM.test() )  
-print(time.process_time() - start)
+print(vm.complement('0005',True))
+
+print(vm.subtract('482649534595734','482649534595704',True))
 
 
-print(VedicM.mul12('26154',True) )        
 
-print(time.process_time())
-print(VedicM.mul9('482649534595734983493434989834321342532668578697454351481293048120348','999999999999999999999999999999999999999999999999999999999999999999999','True'))     
 
-print(time.process_time())
+
+#start = time.process_time()
+print(vm.mul11('482649534595734983493434989834321342532668578697454351481293048120348',True) )  
+#print(time.process_time() - start)
+
+#start = time.process_time()
+#print(vm.test() )  
+#print(time.process_time() - start)
+
+print("Multiply by 12")
+print(vm.mul12('26154',True) )  
+print(26154*12)      
+
+#print(time.process_time())
+print(vm.mul9('482649534595734983493434989834321342532668578697454351481293048120348','999999999999999999999999999999999999999999999999999999999999999999999','True'))     
+
+print(482649534595734983493434989834321342532668578697454351481293048120348 * 999999999999999999999999999999999999999999999999999999999999999999999)
+#print(time.process_time())
 
 
 
 print(482649534595734983493434989834321342532668578697454351481293048120348*999999999999999999999999999999999999999999999999999999999999999999999)     
  
 
-print(VedicM.mul9('46972','99'))         
+print(vm.mul9('46972','99',True))  
+print(46972*99)  
+
+
+
+print(vm.mul2d('57','83',True))  
+print(57*83)
                 
 #in the command line of ipython
 

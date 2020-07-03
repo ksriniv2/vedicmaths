@@ -9,7 +9,7 @@ class VedicM:
     
     
 
-    def complement(inpComplement,learn=False):
+    def complement(self,inpComplement,learn=False):
         if learn:
             VedicM("compliment")
             
@@ -40,7 +40,7 @@ class VedicM:
             str_nums = [str(x) for x in reversed(rarr)]
             return(''.join(str_nums))
         
-    def subtract(inpNumerator,inpDenominator,learn=False):
+    def subtract(self,inpNumerator,inpDenominator,learn=False):
         if learn:
             VedicM("subtract")
             
@@ -97,7 +97,7 @@ class VedicM:
                return('-'+ ''.join(str_nums))
             else:
                 return(''.join(str_nums))
-    def mul11(inpMultiply,learn=False):
+    def mul11(self,inpMultiply,learn=False):
         if learn:
                 VedicM("Multiply11")
                 
@@ -128,7 +128,7 @@ class VedicM:
             str_nums = [str(x) for x in reversed(rarr)]
             return(''.join(str_nums))
                     
-    def mul12(inpMultiply,learn=False):
+    def mul12(self,inpMultiply,learn=False):
         if learn:
                 VedicM("Multiply12")
                 
@@ -160,7 +160,7 @@ class VedicM:
             return(''.join(str_nums))
         
         
-    def mul9 (inpMultiplicand,inpMultiplier,learn=False):
+    def mul9 (self,inpMultiplicand,inpMultiplier,learn=False):
         
         eqdigit=''
         if learn:
@@ -168,16 +168,16 @@ class VedicM:
             
         if str(inpMultiplier).isnumeric() and str(inpMultiplicand).isnumeric():
             if len(str(inpMultiplier))==len(str(inpMultiplicand)):
-                step1=VedicM.subtract(inpMultiplicand,'1')
-                step2=VedicM.complement(inpMultiplicand)
+                step1=self.subtract(inpMultiplicand,'1')
+                step2=self.complement(inpMultiplicand)
                 return(step1+step2)
             elif len(str(inpMultiplier)) > len(str(inpMultiplicand)):
                 step0=len(str(inpMultiplier)) - len(str(inpMultiplicand))
                 for iter in range(step0):
                     eqdigit=eqdigit+'0'
                 inpMultiplicand=eqdigit+inpMultiplicand
-                step1=VedicM.subtract(inpMultiplicand,'1')
-                step2=VedicM.complement(inpMultiplicand)
+                step1=self.subtract(inpMultiplicand,'1')
+                step2=self.complement(inpMultiplicand)
                 return(step1+step2)
             elif len(str(inpMultiplier)) < len(str(inpMultiplicand)):
                 
@@ -186,22 +186,47 @@ class VedicM:
                 inpMultiplicandright=''.join(list(inpMultiplicand)[-1*len(inpMultiplier):])
                 
                 inpMultiplicandleft=str(int(inpMultiplicandleft) +1)
-                step1=VedicM.subtract(inpMultiplicand,inpMultiplicandleft)
-                step2=VedicM.complement(inpMultiplicandright)
+                step1=self.subtract(inpMultiplicand,inpMultiplicandleft)
+                step2=self.complement(inpMultiplicandright)
                 return(step1+step2)
-                                                              
+          
+    def mulcross2d (self,inplMultiplicand,inplMultiplier):
+        return(int(inplMultiplicand[0])* int(inplMultiplier[1]) + (int(inplMultiplicand[1])* int(inplMultiplier[0])))           
+
+                                                
         
+    def mul2d (self,inpMultiplicand,inpMultiplier,learn=False):
         
+       if learn:
+            VedicM("Multiply2digit")
         
+       if str(inpMultiplier).isnumeric() and len(inpMultiplier)==2 and  len(inpMultiplicand)==2 and str(inpMultiplicand).isnumeric():
+          lstMultiplicand=list(reversed(inpMultiplicand)) 
+          lstMultiplier=list(reversed(inpMultiplier)) 
+          
+          step1=int(lstMultiplicand[0]) * int(lstMultiplier[0])
+          #print(step1)
+          
+          step2=self.mulcross2d(lstMultiplicand,lstMultiplier) + int(list(str(step1))[0] if len(str(step1)) > 1 else 0)
+          #print(step2)
+          step2Carry=list(str(step2))[0] if len(str(step2)) > 1 else 0
+          #print(step2Carry)
+          step3=int(lstMultiplicand[1]) * int(lstMultiplier[1]) + int(step2Carry)
+          return(str(step3)+str(list(str(step2))[1] if len(str(step2)) > 1 else step2)+str(list(str(step1))[1] if len(str(step1)) > 1 else step1))
+                 
+          
+        
+    
         
         
 
         
-    def test():
+    def test(self):
         print(482649534595734983493434989834321342532668578697454351481293048120348 * 11)
     
     def __init__(self,method=False):
         print("Entering the world of Vedic Maths")
+        print("*********************************")
         
         if method=='complement':
             print("Sutra is : Nikhilam Navatascarmam Dasatah")
@@ -233,6 +258,15 @@ class VedicM:
             print('Subtract 1 from the multiplicand')
             print('Obtain complement of the multiplicand')
             print('concatenate the values together')
+        elif method=='Multiply2digit':
+            print("Sutra is : Urdhvatiryabhyaam")
+            print("Meaning : Vertical and cross wire")
+            print('Vertically multiply digits of first column on right')
+            print('Cross multiply the digits across')
+            print('Vertically multiply digits of first column on right')
+            print('In each step, carry over the other digits')
+        
+    
             
         
             
