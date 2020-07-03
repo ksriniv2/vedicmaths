@@ -205,13 +205,14 @@ class VedicM:
           lstMultiplier=list(reversed(inpMultiplier)) 
           
           step1=int(lstMultiplicand[0]) * int(lstMultiplier[0])
-          #print(step1)
+          print(step1)
           
           step2=self.mulcross2d(lstMultiplicand,lstMultiplier) + int(list(str(step1))[0] if len(str(step1)) > 1 else 0)
-          #print(step2)
-          step2Carry=list(str(step2))[0] if len(str(step2)) > 1 else 0
-          #print(step2Carry)
+          print(step2)
+          step2Carry=list(str(step2))[0] if len(str(step2)) == 2 else list(str(step2))[0]+list(str(step2))[1] if len(str(step2)) == 3  else 0
+          print(step2Carry)
           step3=int(lstMultiplicand[1]) * int(lstMultiplier[1]) + int(step2Carry)
+          print(step3)
           return(str(step3)+str(list(str(step2))[1] if len(str(step2)) > 1 else step2)+str(list(str(step1))[1] if len(str(step1)) > 1 else step1))
                  
           
