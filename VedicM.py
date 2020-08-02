@@ -191,7 +191,10 @@ class VedicM:
                 return(step1+step2)
           
     def mulcross2d (self,inplMultiplicand,inplMultiplier):
-        return(int(inplMultiplicand[0])* int(inplMultiplier[1]) + (int(inplMultiplicand[1])* int(inplMultiplier[0])))           
+        return(int(inplMultiplicand[0])* int(inplMultiplier[1]) + (int(inplMultiplicand[1])* int(inplMultiplier[0])))
+
+    def mulcross3d (self,inplMultiplicand,inplMultiplier):
+        return(int(inplMultiplicand[0])* int(inplMultiplier[2]) + (int(inplMultiplicand[2])* int(inplMultiplier[0])))            
 
                                                 
         
@@ -214,10 +217,36 @@ class VedicM:
           step3=int(lstMultiplicand[1]) * int(lstMultiplier[1]) + int(step2Carry)
           #print(step3)
           
-          return(str(step3))+list(str(step2))[-1]+list(str(step1))[-1]
+          return(str(step3)+list(str(step2))[-1]+list(str(step1))[-1])
           
                  
-          
+    def mul3d(self,inpMultiplicand,inpMultiplier,learn=False):
+        if learn:
+            VedicM("Multiply3digit")
+            
+        if str(inpMultiplier).isnumeric() and len(inpMultiplier)==3 and  len(inpMultiplicand)==3 and str(inpMultiplicand).isnumeric():
+            lstMultiplicand=list(reversed(inpMultiplicand)) 
+            lstMultiplier=list(reversed(inpMultiplier)) 
+            step1=int(lstMultiplicand[0]) * int(lstMultiplier[0])
+            print(step1)
+            step2=self.mulcross2d(lstMultiplicand,lstMultiplier) + int(list(str(step1))[0] if len(str(step1)) > 1 else 0)
+            print(step2)
+            step2Carry=list(str(step2))[0] if len(str(step2)) == 2 else list(str(step2))[0]+list(str(step2))[1] if len(str(step2)) == 3  else 0
+            print(step2Carry)
+            step3_vm=int(lstMultiplicand[1]) * int(lstMultiplier[1])
+            step3_cm=self.mulcross3d(lstMultiplicand,lstMultiplier)
+            step3=step3_cm+step3_vm+int(step2Carry)
+            print(step3)
+            step3Carry=list(str(step3))[0] if len(str(step3)) == 2 else list(str(step3))[0]+list(str(step3))[1] if len(str(step3)) == 3  else 0
+            print(step3Carry)
+            step4=self.mulcross2d(lstMultiplicand[1:],lstMultiplier[1:])+int(step3Carry)
+            print(step4)
+            step4Carry=list(str(step4))[0] if len(str(step4)) == 2 else list(str(step4))[0]+list(str(step4))[1] if len(str(step4)) == 3  else 0
+            print(step4Carry)
+            step5=int(lstMultiplicand[2]) * int(lstMultiplier[2])+int(step4Carry)
+            return (str(step5)+list(str(step4))[-1]+list(str(step3))[-1]+list(str(step2))[-1]+list(str(step1))[-1])
+            
+        
         
     
         
@@ -265,6 +294,16 @@ class VedicM:
             print("Sutra is : Urdhvatiryabhyaam")
             print("Meaning : Vertical and cross wire")
             print('Vertically multiply digits of first column on right')
+            print('Cross multiply the digits across')
+            print('Vertically multiply digits of first column on right')
+            print('In each step, carry over the other digits')
+            
+        elif method=='Multiply3digit':
+            print("Sutra is : Urdhvatriyagbhyaam")
+            print("Meaning : Vertical and cross wire")
+            print('Vertically multiply digits of first column on right')
+            print('Cross multiply the digits across')
+            print('Combine Vertical and cross multiply')
             print('Cross multiply the digits across')
             print('Vertically multiply digits of first column on right')
             print('In each step, carry over the other digits')

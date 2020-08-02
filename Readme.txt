@@ -96,3 +96,18 @@ Output:
 	Vertically multiply digits of first column on right
 	In each step, carry over the other digits
 	4731
+	
+Multiply 3 digits on multiplicand and multiplier:
+
+print(vm.mul3d('057','346',True))
+
+Output:
+*********************************
+Sutra is : Urdhvatriyagbhyaam
+Meaning : Vertical and cross wire
+Vertically multiply digits of first column on right
+Cross multiply the digits across
+Combine Vertical and cross multiply
+Cross multiply the digits across
+Vertically multiply digits of first column on right
+In each step, carry over the other digits
